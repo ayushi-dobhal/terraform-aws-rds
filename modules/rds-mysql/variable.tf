@@ -41,9 +41,9 @@ variable "kms_key_id_arn" {
 }
 variable "option_major_engine_version" {}
 variable "option_engine_name" {}
-variable "iam_roles" {
-	type    = string
-}
+#variable "iam_roles" {
+#	type    = string
+#}
 variable "parameter_family" {
 	type 	= string
 }
@@ -53,12 +53,12 @@ variable "port" {
 variable "cw_logs" {
 	type 	= list(string)
 }
-variable "monitoring_interval" {
-	type 	= number
-}
-variable "monitoring_role_arn" {
-	type = string
-}
+#variable "monitoring_interval" {
+#	type 	= number
+#}
+#variable "monitoring_role_arn" {
+#	type = string
+#}
 variable "backup_retention_period" {
 	type = number
 }

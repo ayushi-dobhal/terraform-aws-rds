@@ -34,7 +34,6 @@ resource "aws_rds_cluster" "rds_cluster" {
 	backup_retention_period = var.backup_retention_period											#7
 	deletion_protection     = var.deletion_protection
 	db_subnet_group_name    = aws_db_subnet_group.subnet-group.name
-	iam_roles               = var.iam_roles
 	vpc_security_group_ids  = var.security_groups
 	skip_final_snapshot     = var.skip_final_snapshot												#true
 	storage_encrypted       = var.storage_encrypted													#true
@@ -58,8 +57,6 @@ resource "aws_rds_cluster_instance" "rds" {
 	preferred_maintenance_window = var.maintenance_window
 	apply_immediately            = var.apply_immediately											#true
 	auto_minor_version_upgrade   = var.auto_minor_version_upgrade									#true
-	monitoring_interval			 = var.monitoring_interval
-	monitoring_role_arn          = var.monitoring_role_arn
 	tags                         = merge(var.tags, tomap({"Name": var.rds_name}))
 }
 
