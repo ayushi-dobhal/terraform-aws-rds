@@ -174,7 +174,7 @@ variable "common_tags" {
 }
 
 variable "create_rds_security_group" {
-  type        = boolean
+  type        = bool
   default     = true
   description = "A map to add common tags to all the resources"
 }
